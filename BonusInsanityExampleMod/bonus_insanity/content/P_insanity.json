@@ -1,0 +1,47 @@
+{
+	"id": "ins.bonus_insanity_insanity",
+	"modCredit": "BobbyTwoHands",
+	"imgCredit": "",
+	"image": "bonus_insanity.0_alone.jpg",
+	
+	"type": "PERSON",
+	"conditional": "($INS_BONUS_INSANITY_CHARACTER = 1) & ($INS_BONUS_INSANITY_STATE = 1) & is_sane",
+	"probability": 0.08,
+
+	"name": "Voices in the dark",
+	"description": "As the whispers continue, %PERSON_NAME is slowly turning away from the world of humans, which she feels has failed her, and towards this new fascination. Her sanity is draining as she spends long evenings in the complete darkness, trying to hear the words more clearly. As this continues, she will lose sanity over time until she is ours.",
+
+
+	"choices": [
+		{
+			"name": "The whispers continue",
+			"description":"%PERSON_NAME loses 4 sanity",
+			"outcomes": [
+				{
+					"weight": 0.5,
+					"environment": [
+					],
+					"effects": [
+						{ "command": "LOSE_SANITY", "argument": "4" }
+					]
+				}
+			]
+		},
+		{
+			"name": "The darkness howls",
+			"description":"%PERSON_NAME loses 14 sanity, lose 1 power\n\nREQUIRES 1 POWER",
+			"conditional":"power > 0",
+			"outcomes": [
+				{
+					"weight": 0.5,
+					"environment": [
+					],
+					"effects": [
+						{ "command": "LOSE_SANITY", "argument": "14" },
+						{ "command": "GAIN_POWER", "argument": "-1" }
+					]
+				}
+			]
+		}
+	]
+}

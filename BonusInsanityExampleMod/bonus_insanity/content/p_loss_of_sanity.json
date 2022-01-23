@@ -1,0 +1,32 @@
+{
+	"id": "ins.bonus_insanity_loss_of_sanity",
+	"modCredit": "BobbyTwoHands",
+	"imgCredit": "",
+	"image": "bonus_insanity.0_voices.jpg",
+	
+	"type": "PERSON",
+	"conditional": "($INS_BONUS_INSANITY_CHARACTER = 1) & ($INS_BONUS_INSANITY_STATE = 1) & (!is_sane)",
+	"probability": 1,
+
+	"name": "Voices in the dark",
+	"description": "%PERSON_NAME's mind has been lost the to darkness. The path she took in grief has lead her to thoughts the human mind was never meant to think, and to acceptance of the urgings of creatures beyond the human world. Through her open mind they now have a vessel and conduit to act.",
+
+
+	"choices": [
+		{
+			"name": "The voices guide her now",
+			"description":"%PERSON_NAME gains 25% shadow",
+			"outcomes": [
+				{
+					"weight": 0.5,
+					"environment": [
+						{ "key": "INS_BONUS_INSANITY_STATE", "value": "2" ,"local":"False"}
+					],
+					"effects": [
+						{ "command": "GAIN_SHADOW", "argument": "25" }
+					]
+				}
+			]
+		}
+	]
+}

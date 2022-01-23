@@ -1,0 +1,31 @@
+{
+	"id": "ins.bonus_insanity_gain_shadow",
+	"modCredit": "BobbyTwoHands",
+	"imgCredit": "",
+	"image": "bonus_insanity.0_voices.jpg",
+	
+	"type": "PERSON",
+	"conditional": "($INS_BONUS_INSANITY_CHARACTER = 1) & ($INS_BONUS_INSANITY_STATE = 2) & (shadow < 100)",
+	"probability": 0.1,
+
+	"name": "Voices in the dark",
+	"description": "%PERSON_NAME now spends her time in meditation, sealed away from her subjects and advisors, listening in total darkness to voices from the beyond. Her soul is slowly slipping away...",
+
+
+	"choices": [
+		{
+			"name": "Soon she will be lost",
+			"description":"%PERSON_NAME gains 25% shadow",
+			"outcomes": [
+				{
+					"weight": 0.5,
+					"environment": [
+					],
+					"effects": [
+						{ "command": "GAIN_SHADOW", "argument": "25" }
+					]
+				}
+			]
+		}
+	]
+}

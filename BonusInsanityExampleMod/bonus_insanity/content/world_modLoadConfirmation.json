@@ -1,0 +1,28 @@
+{
+	"id": "anw.firstTurnConfirm",
+	"modCredit": "BobbyTwoHands",
+	"imgCredit": "",
+	"image": "bonus_insanity.0_first.jpg",
+	
+	"type": "WORLD",
+	"conditional": "($ANW_INSANITY_FIRST_TURN_CONFIRM = 0)",
+	"probability": 1,
+
+	"name": "Madness in the air",
+	"description": "You smell madness in the air...",
+
+
+	"choices": [
+		{
+			"name": "All is as planned",
+			"outcomes": [
+				{
+					"weight": 0.7,
+					"environment": [
+						{ "key": "ANW_INSANITY_FIRST_TURN_CONFIRM", "value": "-1" ,"local":"False"}
+					]
+				}
+			]
+		}
+	]
+}

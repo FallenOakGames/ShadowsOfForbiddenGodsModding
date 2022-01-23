@@ -1,0 +1,66 @@
+{
+	"id": "ins.bonus_insanity_cyclic",
+	"modCredit": "BobbyTwoHands",
+	"imgCredit": "",
+	"image": "bonus_insanity.0_voices.jpg",
+	
+	"type": "PERSON",
+	"conditional": "($INS_BONUS_INSANITY_CHARACTER = 1) & ($INS_BONUS_INSANITY_STATE = 4) & ((turn - $INS_BONUS_INSANITY_LAST_TRIGGER) > 25)",
+	"probability": 0.1,
+
+	"name": "Voices in the dark",
+	"description": "%PERSON_NAME consults with the voices, listening to advisors unseen, as her human entourage look on horrified. She talks calmly with people unseen, and shouts and pleads with creatures from beyond as she seeks guidance.",
+
+
+	"choices": [
+		{
+			"name": "Her worship empowers the darkness",
+			"description":"%PERSON_NAME leads blasphemous rituals to the darker powers, increasing your power by 1, but increases UNREST by 50 as the populace rebel against the sacrifices taken from them",
+			"outcomes": [
+				{
+					"weight": 0.5,
+					"environment": [
+						{ "key": "INS_BONUS_INSANITY_LAST_TRIGGER", "value": "turn" ,"local":"False"}
+					],
+					"effects": [
+						{ "command": "GAIN_POWER", "argument": "1" },
+						{ "command": "INCREASE_UNREST", "argument": "50" }
+					]
+				}
+			]
+		},
+		{
+			"name": "An offering of gold",
+			"condition":"gold>10",
+			"description":"%PERSON_NAME drops up to 100 gold at her location, which could be collected by an agent, or a hero who arrives quickly\n\nREQUIRES AT LEAST 10 GOLD",
+			"outcomes": [
+				{
+					"weight": 0.5,
+					"environment": [
+						{ "key": "INS_BONUS_INSANITY_LAST_TRIGGER", "value": "turn" ,"local":"False"}
+					],
+					"effects": [
+						{ "command": "CACHE_GOLD", "argument": "100" },
+						{ "command": "PAN_TO", "argument": "" }
+					]
+				}
+			]
+		},
+		{
+			"name": "Let them in",
+			"description":"%PERSON_NAME works with the cult to allow them access to the location, increasing infiltration\n\n[REQUIRES INFILTRATION TO BE LESS THAN 100%]",
+			"condition":"infiltration<100",
+			"outcomes": [
+				{
+					"weight": 0.5,
+					"environment": [
+						{ "key": "INS_BONUS_INSANITY_LAST_TRIGGER", "value": "turn" ,"local":"False"}
+					],
+					"effects": [
+						{ "command": "INFILTRATE_POINTS_OF_INTEREST", "argument": "1" }
+					]
+				}
+			]
+		}
+	]
+}

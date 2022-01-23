@@ -1,0 +1,48 @@
+{
+	"id": "ins.bonus_insanity_shadow_achieved",
+	"modCredit": "BobbyTwoHands",
+	"imgCredit": "",
+	"image": "bonus_insanity.0_voices.jpg",
+	
+	"type": "PERSON",
+	"conditional": "($INS_BONUS_INSANITY_CHARACTER = 1) & ($INS_BONUS_INSANITY_STATE = 2) & (shadow = 100)",
+	"probability": 1,
+
+	"name": "Voices in the dark",
+	"description": "%PERSON_NAME emerges from her solitude to assume her rule once again, sitting on her throne, now barely paying attention to the world around her as she watches and listens to creatures which no one else can see, her eyes able to see into worlds beyond the mortal one.",
+
+
+	"choices": [
+		{
+			"name": "Where they lead she follows",
+			"description":"%PERSON_NAME abdicates her position and becomes a hero, who may possibly be recruited as an agent\n\n[ENDS THIS EVENT CHAIN]",
+			"outcomes": [
+				{
+					"weight": 0.5,
+					"environment": [
+						{ "key": "INS_BONUS_INSANITY_STATE", "value": "3" ,"local":"False"}
+					],
+					"effects": [
+						{ "command": "ABDICATE", "argument": "" },
+						{ "command": "BECOME_HERO", "argument": "" }
+					]
+				}
+			]
+		},
+		{
+			"name": "She rules on their behalf",
+			"description":"%PERSON_NAME remains ruler, and begins to take actions to benefit the dark forces",
+			"outcomes": [
+				{
+					"weight": 0.5,
+					"environment": [
+						{ "key": "INS_BONUS_INSANITY_STATE", "value": "4" ,"local":"False"}
+					],
+					"effects": [
+						{ "command": "SHOW_EVENT", "argument": "ins.bonus_insanity_cyclic" }
+					]
+				}
+			]
+		}
+	]
+}

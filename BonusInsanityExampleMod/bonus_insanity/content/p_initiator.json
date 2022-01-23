@@ -1,0 +1,32 @@
+{
+	"id": "ins.bonus_insanity_initiator",
+	"modCredit": "BobbyTwoHands",
+	"imgCredit": "",
+	"image": "bonus_insanity.0_alone.jpg",
+	
+	"type": "PERSON",
+	"conditional": "is_mourning & is_female & is_ruler & ($INS_BONUS_INSANITY_STATE = 0)",
+	"probability": 0.05,
+
+	"name": "Voices in the dark",
+	"description": "%PERSON_NAME is in mourning, but as she spends time in the darkness, alone and consumed by her thoughts, darker voices are slowly making themselves heard. When a person is a crisis point in their lives, their soul's defences are weakest, and creatures from beyond can try to enter the world through their soul.",
+
+
+	"choices": [
+		{
+			"name": "The boundaries are weak",
+			"outcomes": [
+				{
+					"weight": 0.5,
+					"environment": [
+						{ "key": "INS_BONUS_INSANITY_STATE", "value": "1" ,"local":"False"},
+						{ "key": "INS_BONUS_INSANITY_CHARACTER", "value": "1" ,"local":"PERSON"}
+					],
+					"effects": [
+						{ "command": "MAKE_CAST_MEMBER", "argument": "" }
+					]
+				}
+			]
+		}
+	]
+}
