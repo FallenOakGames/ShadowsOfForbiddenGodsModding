@@ -1,0 +1,31 @@
+{
+	"id": "anw.demo_falcon",
+	"modCredit": "BobbyTwoHands",
+	"imgCredit": "",
+	"image": "astrid.0_ice_landscape.jpg",
+	
+	"type": "PERSON",
+	"conditional": "($ANW_ASTRID_FALCON = 0) & (is_drycold | is_arctic | is_snow | is_tundra) & ((minion_one_special_value = 1846742) | (minion_two_special_value = 1846742) | (minion_three_special_value = 1846742))",
+	"probability": 1,
+
+	"name": "The Falcon",
+	"description": "The Falcon wheels overhead, and brings back news to %PERSON_NAME, its magical eyes seeing things which to many others would be hidden. %PERSON_NAME now knows what %he must do.",
+
+
+	"choices": [
+		{
+			"name": "A new foe",
+			"outcomes": [
+				{
+					"weight": 0.7,
+					"environment": [
+						{ "key": "ANW_ASTRID_FALCON", "value": "1" ,"local":"PERSON"}
+					],
+					"effects": [
+						{ "command": "GAIN_XP", "argument": "256" }
+					]
+				}
+			]
+		}
+	]
+}

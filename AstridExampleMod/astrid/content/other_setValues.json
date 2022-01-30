@@ -1,0 +1,39 @@
+{
+	"id": "anw.demo_astrid2",
+	"modCredit": "BobbyTwoHands",
+	"imgCredit": "",
+	"image": "astrid.0_astrid.jpg",
+	
+	"type": "INERT",
+	"conditional": "1=1",
+	"probability": 1,
+
+	"name": "Astrid Svendottir",
+	"description": "Following the stars and the signs they have read, her clan's shamen have warned her that now is the time she will be most needed, and that the world may depend on her. Should she fail, the world will surely fall.",
+
+
+	"choices": [
+		{
+			"name": "So be it",
+			"outcomes": [
+				{
+					"weight": 0.7,
+					"environment": [
+					],
+					"effects": [
+						{ "command": "SET_UNIT_COMMANDED", "argument": "False" },
+						{ "command": "SET_AGE", "argument": "31" },
+						{ "command": "SET_MIGHT", "argument": "4" },
+						{ "command": "SET_LORE", "argument": "1" },
+						{ "command": "SET_INTRIGUE", "argument": "1" },
+						{ "command": "SET_COMMAND", "argument": "6"},
+						{ "command": "GAIN_GOLD", "argument": "256" },
+						{ "command": "MAKE_FEMALE", "argument": "" },
+						{ "command": "MAKE_CAST_MEMBER", "argument": "" },
+						{ "command": "GENERATE_MINION", "argument": "2/1/1/0/Arctic Falcon/astrid.0_falcon.png/1846742"}
+					]
+				}
+			]
+		}
+	]
+}

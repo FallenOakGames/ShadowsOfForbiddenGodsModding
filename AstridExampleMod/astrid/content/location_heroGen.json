@@ -1,0 +1,32 @@
+{
+	"id": "anw.demo_astrid",
+	"modCredit": "BobbyTwoHands",
+	"imgCredit": "",
+	"image": "astrid.0_astrid.jpg",
+	
+	"type": "LOCATION",
+	"conditional": "($ANW_ASTRID_SPAWNED = 0) & is_human & (is_drycold | is_arctic | is_snow | is_tundra)",
+	"probability": 1,
+
+	"name": "Astrid Svendottir",
+	"description": "Astrid Svendottir, last heir to the Clan of the Falcon, a nomadic group who wander the frozen wilderness, has taken up her father's sword and taken the oathes to defend her people against the threats now facing the world.",
+
+
+	"choices": [
+		{
+			"name": "A new foe",
+			"outcomes": [
+				{
+					"weight": 0.7,
+					"environment": [
+						{ "key": "ANW_ASTRID_SPAWNED", "value": "1" ,"local":"False"}
+					],
+					"effects": [
+						{ "command": "CREATE_HERO_WARRIOR", "argument": "Astrid/Svendottir/anw.demo_astrid2/astrid.0_portrait.png" },
+						{ "command": "PAN_TO", "argument": "" }
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,6 @@
+{
+	"title": "Astrid",
+	"description":"A small mod to add a new character, to demonstrate how modding can be used to create custom characters in-game, as well as custom minion with identifiers to allow other events to recognise their presence",
+	"tags":["character mod"]
+	
+}
