@@ -1,0 +1,29 @@
+{
+	"id": "anw.postEventTest",
+	"modCredit": "BobbyTwoHands",
+	"imgCredit": "Ruins with an obelisk in the distance by Hubert Robert",
+	"image": "default.64.jpg",
+	
+	"type": "INERT",
+	"conditional": "1=1",
+	"probability": 1,
+
+	"name": "Debug test",
+	"description": "Challenge complete. The UNIT of this event is the unit which just performed the challenge, and this is where you would cause/apply effects which go beyond gaining menace and profile",
+
+
+	"choices": [
+		{
+			"name": "Event-challenge outcome",
+			"outcomes": [
+				{
+					"weight": 0.8,
+					"effects": [
+					],
+					"environment": [
+					]
+				}
+			]
+		}
+	]
+}

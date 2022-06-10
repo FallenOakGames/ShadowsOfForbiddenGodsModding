@@ -1,0 +1,31 @@
+{
+	"id": "anw.genChallenge",
+	"modCredit": "BobbyTwoHands",
+	"imgCredit": "Ruins with an obelisk in the distance by Hubert Robert",
+	"image": "default.64.jpg",
+	
+	"type": "MOVE",
+	"conditional": "$ANW_GEN_CHALLENGE=0 & is_human",
+	"probability": 1,
+
+	"name": "Challenge generation example",
+	"description": "This event demonstates how a challenge can be created, and also demonstrates use of multi text. Random letter choice: %MULTI[a|b|c|d]%MULTI.",
+
+
+	"choices": [
+		{
+			"name":"Generate a challenge here",
+			"outcomes": [
+				{
+					"weight": 0.8,
+					"effects": [
+						{ "command": "GENERATE_CHALLENGE", "argument": "customChallenge/description of custom challenge/-1/4/8/16/32/default.icon_daughter_shadow.png/anw.postEventTest" }
+					],
+					"environment": [
+						{ "key": "ANW_GEN_CHALLENGE", "value": "-1" ,"local":"False"}
+					]
+				}
+			]
+		}
+	]
+}
