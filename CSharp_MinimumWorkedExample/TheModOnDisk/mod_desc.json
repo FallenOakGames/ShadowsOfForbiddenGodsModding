@@ -1,0 +1,7 @@
+{
+	"displayedName": "Insect God",
+	"prefix": "insect",
+	"description": "Work in progress, but will eventually be the Insect God, used as an example of C# code for custom god usage",
+	"versionsSupported":["0.11"],
+	"modCredit": "Fallen Oak Games"
+}
