@@ -1,24 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Assets.Code;
-using Assets.Code.Modding;
 
 namespace ShadowsInsectGod
 {
-    public class ModCore :  ModKernel
+    public class ModCore : Assets.Code.Modding.ModKernel
     {
-
         public override void onStartGamePresssed(Map map, List<God> gods)
         {
             gods.Add(new God_Insect());
         }
 
-        public override void afterMapGenAfterHistorical(Map map)
+        public override void beforeMapGen(Map map)
         {
-            base.afterMapGenAfterHistorical(map);
+            base.beforeMapGen(map);
 
             map.overmind.agentsUnique.Add(new UAE_Abs_DemoAgent(map));
-        }
 
+        }
     }
 }
