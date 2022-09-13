@@ -1,0 +1,1 @@
+Note that these are larger than the game will need. They're in 655x750, but need to be rescaled to 218x250 for use in-game.
