@@ -146,6 +146,8 @@ Sprite	agent_monarch
 Sprite	agent_cursed
 Sprite	agent_reaper
 Sprite	agent_trickster
+Sprite	agent_dissident
+Sprite	agent_aristocrat
 	
 Sprite	agent_insect_drone
 Sprite	agent_insect_drone_arthopod
